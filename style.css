@@ -132,7 +132,7 @@
 
         .profile-image {
             margin-top: -100px;
-            margin-right:-150px;
+            margin-right:-200px;
             width: 420px;
             height: 520px;
             border-radius: 0 0 50% 50%;
@@ -319,7 +319,7 @@
             }
 
             .intro {
-                margin-top: 20px;
+                margin-top: 10px;
             }
 
             .about-section {
@@ -347,8 +347,7 @@
                 height: 280px;
             }
         }
-
-        /* Tablet View */
+/* Tablet View */
 @media (max-width: 1024px) {
     .header {
         flex-direction: column;
@@ -357,9 +356,21 @@
         min-height: auto;
     }
 
+    /* Profile image comes first */
+    .profile {
+        order: -1;
+        margin-top: -80px;
+    }
+
+    .profile-image {
+        margin: 0 auto;
+        width: 350px;
+        height: 420px;
+    }
+
     .intro {
         position: relative;
-        margin: 20px auto 40px;
+        margin: 0 auto;
         max-width: 100%;
         text-align: center;
     }
@@ -371,12 +382,6 @@
     .description {
         margin: 0 auto 30px;
         max-width: 500px;
-    }
-
-    .profile-image {
-        margin: 0 auto;
-        width: 350px;
-        height: 420px;
     }
 
     .about-section {
@@ -394,14 +399,28 @@
 /* Mobile View */
 @media (max-width: 480px) {
     .header {
+        flex-direction: column;
         padding: 60px 20px;
+    }
+
+    /* Profile image first */
+    .profile {
+        order: -1;
+        margin-top: -60px;
+    }
+
+    .profile-image {
+        width: 300px;
+        height: 330px;
+        margin: 0 auto;
     }
 
     .top-nav {
         top: 15px;
-        left: 15px;
-        right: 15px;
+        right: 300px;
+        z-index: 2;
         justify-content: center;
+        
     }
 
     .brand {
@@ -438,12 +457,6 @@
         font-size: 13px;
     }
 
-    .profile-image {
-        width: 220px;
-        height: 260px;
-        margin: 20px auto 0;
-    }
-
     .about-title,
     .portfolio-title {
         font-size: 26px;
@@ -453,10 +466,7 @@
         font-size: 14px;
     }
 
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-    }
-
+    .portfolio-grid,
     .services {
         grid-template-columns: 1fr;
     }
