@@ -19,18 +19,19 @@
 
         /* Updated header section to match exact reference design */
         .header {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 60px;
+            display: flex;
+            justify-content: center;
             align-items: center;
-            background: #f5f4f0;
-            padding: 60px 50px 50px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
             position: relative;
+            background: #f5f4f0;
+            padding: 100px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
             min-height: 500px;
+            text-align: center;
         }
+
 
         /* Updated top navigation to match reference */
         .top-nav {
@@ -61,8 +62,12 @@
 
         /* Updated intro section to match exact typography and spacing */
         .intro {
-            max-width: 380px;
-            margin-top: 20px;
+            position: absolute;
+            z-index: 2;
+            max-width: 500px;
+            margin-left: -500px;
+            padding: 20px;
+            text-align: left;
         }
 
         .greeting {
@@ -85,6 +90,7 @@
             color: #2c2c2c;
             font-weight: 400;
             font-size: 46px;
+            margin-right: 00px;
         }
 
         .description {
@@ -121,15 +127,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            z-index: 1;
         }
 
         .profile-image {
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
+            margin-top: -100px;
+            margin-right:-150px;
+            width: 420px;
+            height: 520px;
+            border-radius: 0 0 50% 50%;
             object-fit: cover;
             border: none;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
         /* Services Section */
@@ -145,7 +154,7 @@
             padding: 30px 20px;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             transition: transform 0.2s;
         }
 
@@ -191,7 +200,7 @@
             text-align: center;
             color: #666;
             font-weight: 500;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
         }
 
         /* About Section */
@@ -251,7 +260,7 @@
             background: white;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s;
         }
 
@@ -338,3 +347,117 @@
                 height: 280px;
             }
         }
+
+        /* Tablet View */
+@media (max-width: 1024px) {
+    .header {
+        flex-direction: column;
+        padding: 80px 40px;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .intro {
+        position: relative;
+        margin: 20px auto 40px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 40px;
+    }
+
+    .description {
+        margin: 0 auto 30px;
+        max-width: 500px;
+    }
+
+    .profile-image {
+        margin: 0 auto;
+        width: 350px;
+        height: 420px;
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .portfolio-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 480px) {
+    .header {
+        padding: 60px 20px;
+    }
+
+    .top-nav {
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        justify-content: center;
+    }
+
+    .brand {
+        font-size: 12px;
+    }
+
+    .intro {
+        padding: 10px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .greeting {
+        font-size: 16px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .title .highlight {
+        font-size: 26px;
+    }
+
+    .description {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 25px;
+        max-width: 100%;
+    }
+
+    .contact-btn {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+
+    .profile-image {
+        width: 220px;
+        height: 260px;
+        margin: 20px auto 0;
+    }
+
+    .about-title,
+    .portfolio-title {
+        font-size: 26px;
+    }
+
+    .about-content {
+        font-size: 14px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+}
