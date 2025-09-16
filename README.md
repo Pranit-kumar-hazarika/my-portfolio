@@ -16,15 +16,6 @@ This is my personal portfolio website where you can explore:
 
 ---
 
-
-## 📷 Preview
-<img width="1572" height="876" alt="Screenshot 2025-09-16 191153" src="https://github.com/user-attachments/assets/8ec7ba0f-2ec9-49f0-b401-972ecf4779f8" />
-(https://raw.githubusercontent.com/Pranit-kumar-hazarika/my-portfolio/main/preview.png)  
-
-
-
---
-
 ## 📬 Connect with Me
 - **GitHub:** [Pranit-kumar-hazarika](https://github.com/Pranit-kumar-hazarika)  
 - **LinkedIn:** [Pranit Kumar Hazarika](https://www.linkedin.com/in/pranit-kumar-hazarika-64302937a/)  
