@@ -481,6 +481,54 @@
             }
         }
 
+.connect-section {
+    display: flex;
+    justify-content: center;
+    margin: 80px 20px;
+}
+
+.connect-card {
+    background: #ffffff;
+    padding: 50px 40px;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.connect-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+.connect-section .section-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    color: #2c2c2c;
+}
+
+.connect-links a {
+    display: inline-block;
+    margin: 12px 20px;
+    padding: 15px 30px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.connect-links a:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: linear-gradient(135deg, #764ba2, #667eea);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
         /* Footer */
         .footer {
             background: #2c2c2c;
@@ -543,82 +591,119 @@
             }
         }
 
-/* Base hidden state */
-.scroll-animate {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: transform, opacity;
-}
+        /* Base hidden state */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform, opacity;
+        }
 
-/* Active state */
-.scroll-animate.active {
-    opacity: 1;
-    transform: translateY(0);
-}
+        /* Active state */
+        .scroll-animate.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-/* --- Variants for diversity --- */
-.fade-left { transform: translateX(-80px); }
-.fade-right { transform: translateX(80px); }
-.fade-up { transform: translateY(80px); }
-.fade-down { transform: translateY(-80px); }
-.zoom-in { transform: scale(0.85); opacity: 0; }
-.zoom-out { transform: scale(1.2); opacity: 0; }
+        /* --- Variants for diversity --- */
+        .fade-left {
+            transform: translateX(-80px);
+        }
 
-/* When active */
-.fade-left.active,
-.fade-right.active,
-.fade-up.active,
-.fade-down.active,
-.zoom-in.active,
-.zoom-out.active {
-    transform: translate(0, 0) scale(1);
-    opacity: 1;
-}
+        .fade-right {
+            transform: translateX(80px);
+        }
 
-/* --- Staggered Animation --- */
-.stagger > * {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.stagger.active > * {
-    opacity: 1;
-    transform: translateY(0);
-}
-.stagger.active > *:nth-child(1) { transition-delay: 0.1s; }
-.stagger.active > *:nth-child(2) { transition-delay: 0.3s; }
-.stagger.active > *:nth-child(3) { transition-delay: 0.5s; }
-.stagger.active > *:nth-child(4) { transition-delay: 0.7s; }
+        .fade-up {
+            transform: translateY(80px);
+        }
 
-/* --- Hover polish --- */
-.service-card, .portfolio-item {
-    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), 
+        .fade-down {
+            transform: translateY(-80px);
+        }
+
+        .zoom-in {
+            transform: scale(0.85);
+            opacity: 0;
+        }
+
+        .zoom-out {
+            transform: scale(1.2);
+            opacity: 0;
+        }
+
+        /* When active */
+        .fade-left.active,
+        .fade-right.active,
+        .fade-up.active,
+        .fade-down.active,
+        .zoom-in.active,
+        .zoom-out.active {
+            transform: translate(0, 0) scale(1);
+            opacity: 1;
+        }
+
+        /* --- Staggered Animation --- */
+        .stagger>* {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .stagger.active>* {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger.active>*:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .stagger.active>*:nth-child(2) {
+            transition-delay: 0.3s;
+        }
+
+        .stagger.active>*:nth-child(3) {
+            transition-delay: 0.5s;
+        }
+
+        .stagger.active>*:nth-child(4) {
+            transition-delay: 0.7s;
+        }
+
+        /* --- Hover polish --- */
+        .service-card,
+        .portfolio-item {
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
                 box-shadow 0.6s ease;
-    will-change: transform, box-shadow;
-}
-.service-card:hover, .portfolio-item:hover {
-    transform: translateY(-12px) scale(1.06);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-}
+            will-change: transform, box-shadow;
+        }
 
-/* Trusted items hover */
-.trusted-item {
-    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+        .service-card:hover,
+        .portfolio-item:hover {
+            transform: translateY(-12px) scale(1.06);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Trusted items hover */
+        .trusted-item {
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
                 background 0.5s ease;
-}
-.trusted-item:hover {
-    transform: scale(1.1) rotate(1deg);
-    background: #fdfcf9;
-}
+        }
 
-/* Footer reveal */
-.footer {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.footer.active {
-    opacity: 1;
-    transform: translateY(0);
-}
+        .trusted-item:hover {
+            transform: scale(1.1) rotate(1deg);
+            background: #fdfcf9;
+        }
+
+        /* Footer reveal */
+        .footer {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .footer.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
