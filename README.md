@@ -1,4 +1,4 @@
-<img width="1572" height="876" alt="Screenshot 2025-09-16 191153" src="https://github.com/user-attachments/assets/ef1afc02-e503-4ef2-8b23-fc54236c1bb1" /># 🌐 My Portfolio
+
 
 Welcome to the repository of my personal portfolio website!  
 This site is built to showcase my projects, skills, and journey as a Computer Science student aspiring to become a software developer.  
