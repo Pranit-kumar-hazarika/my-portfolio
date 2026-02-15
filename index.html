@@ -4,207 +4,409 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pranit Kumar Hazarika - Full-Stack Developer Portfolio">
     <title>Pranit Kumar Hazarika - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-        <!-- Header Section -->
-        <section class="header scroll-animate">
-            <div class="intro">
-                <div class="greeting">Hey, I'm Pranit,</div>
-                <h1 class="title">
-                    A FULL-STACK<br>
-                    <span class="highlight">&</span> Software<br>
-                    DEVELOPER
-                </h1>
-                <p class="description">
-                    Transforming ideas into stunning digital experiences - Full-stack and software development that
-                    captivates, engages, and delivers results.
-                </p>
-                <a href="https://www.linkedin.com/in/pranit-kumar-hazarika-64302937a/" class="contact-btn"
-                    target="_blank">
-                    CONTACT ME →
-                </a>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">PRANIT</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
             </div>
+            <button class="nav-toggle" id="mobile-toggle">☰</button>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-            <div class="profile">
-                <img src="/file/pranit.jpg" alt="Pranit Kumar Hazarika" class="profile-image scroll-animate">
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section class="services scroll-animate">
-            <div class="service-card scroll-animate">
-                <h3 class="service-title">FULL-STACK DEVELOPMENT</h3>
-                <p class="service-desc">Building complete web applications from frontend to backend with modern
-                    technologies.</p>
-            </div>
-            <div class="service-card scroll-animate">
-                <h3 class="service-title">WEB DEVELOPMENT</h3>
-                <p class="service-desc">Creating responsive and interactive websites using HTML, CSS, JavaScript and
-                    modern frameworks.</p>
-            </div>
-            <div class="service-card scroll-animate">
-                <h3 class="service-title">SOFTWARE SOLUTIONS</h3>
-                <p class="service-desc">Developing efficient software solutions tailored to specific business needs and
-                    requirements.</p>
-            </div>
-            <div class="service-card scroll-animate">
-                <h3 class="service-title">PROBLEM SOLVING</h3>
-                <p class="service-desc">Analyzing complex problems and implementing creative, scalable solutions using
-                    best practices.</p>
-            </div>
-        </section>
-
-        <!-- Trusted By Section -->
-        <section class="trusted-section scroll-animate">
-            <h2 class="section-title">TECHNOLOGIES I USE</h2>
-            <div class="trusted-grid">
-                <div class="trusted-item scroll-animate">JavaScript</div>
-                <div class="trusted-item scroll-animate">React</div>
-                <div class="trusted-item scroll-animate">Node.js</div>
-                <div class="trusted-item scroll-animate">HTML/CSS</div>
-                <div class="trusted-item scroll-animate">Git</div>
-                <div class="trusted-item scroll-animate">MongoDB</div>
-                <div class="trusted-item scroll-animate">Express.js</div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="about-section scroll-animate">
-            <div>
-                <h2 class="about-title">
-                    CRAFTING MEANINGFUL<br>
-                    SOFTWARE & INTUITIVE<br>
-                    EXPERIENCES
-                </h2>
-            </div>
-            <div class="about-content scroll-animate">
-                <p>
-                    Hey, I'm Pranit, a CS student and passionate software developer dedicated to creating visually
-                    compelling and user-friendly digital experiences.
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-header">
+                    <p class="hero-label">Portfolio</p>
+                    <h1 class="hero-title">Pranit Kumar Hazarika</h1>
+                </div>
+                <p class="hero-description">
+                    Full-Stack Developer. Building modern web experiences with clean code and thoughtful design.
+                    Specialized in React, Node.js, and creating seamless digital solutions.
                 </p>
-                <p>
-                    With a keen eye for clean code and a deep understanding of user behavior, I build applications and
-                    websites that not only look great but also resonate with users. Whether it's developing a web
-                    application from the ground up or refining a digital product for seamless usability, I blend
-                    strategy, creativity, and functionality to bring ideas to life.
-                </p>
-                <p>
-                    Let's collaborate and make something extraordinary.
-                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('projects')">
+                        ▶ View Projects
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('about')">
+                        ℹ Learn More
+                    </button>
+                </div>
             </div>
-        </section>
+            <div class="scroll-indicator">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </div>
+    </section>
 
-        <!-- Portfolio Section -->
-        <section class="portfolio-section scroll-animate">
-            <div class="portfolio-header scroll-animate">
-                <h2 class="portfolio-title">PORTFOLIO</h2>
-                <p class="portfolio-desc">
-                    Explore my recent work across creative websites and discover how I've transformed ideas into
-                    reality.
-                </p>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item scroll-animate">
-                    <div class="portfolio-image">ID Card Software</div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-item-title">ID CARD SOFTWARE</h3>
-                        <p class="portfolio-item-desc">
-                            A comprehensive ID card generation system built with JavaScript, featuring a user-friendly
-                            interface and efficient card creation.
-                        </p>
-                        <a href="https://github.com/Pranit-kumar-hazarika/id-card-software" class="portfolio-link"
-                            target="_blank" rel="noopener noreferrer">
-                            VIEW PROJECT →
-                        </a>
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-content">
+                    <p class="about-text">
+                        Hey, I'm <span style="font-weight: 700; color: var(--white);">Pranit</span>, a CS student and
+                        passionate software developer dedicated to creating visually compelling and user-friendly
+                        digital experiences.
+                    </p>
+                    <p class="about-text">
+                        With a keen eye for clean code and a deep understanding of user behavior, I build applications
+                        and websites that not only look great but also resonate with users. Whether it's developing a
+                        web application from the ground up or refining a digital product for seamless usability, I blend
+                        strategy, creativity, and functionality to bring ideas to life.
+                    </p>
+                    <p class="about-text">
+                        Let's collaborate and make something <span
+                            style="color: var(--red-600); font-weight: 700;">extraordinary</span>.
+                    </p>
+                </div>
+                <div class="about-services">
+                    <div class="service-card">
+                        <div class="service-number">01</div>
+                        <h3 class="service-title">Full-Stack Development</h3>
+                        <p class="service-description">Building complete web applications from frontend to backend with
+                            modern technologies.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-number">02</div>
+                        <h3 class="service-title">Web Development</h3>
+                        <p class="service-description">Creating responsive and interactive websites using HTML, CSS,
+                            JavaScript and modern frameworks.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-number">03</div>
+                        <h3 class="service-title">Software Solutions</h3>
+                        <p class="service-description">Developing efficient software solutions tailored to specific
+                            business needs and requirements.</p>
                     </div>
                 </div>
-
-                <div class="portfolio-item scroll-animate">
-                    <div class="portfolio-image">Portfolio Website</div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-item-title">PORTFOLIO WEBSITE</h3>
-                        <p class="portfolio-item-desc">
-                            A personal portfolio website showcasing my skills, projects, and achievements with a clean
-                            and modern design.
-                        </p>
-                        <a href="https://github.com/Pranit-kumar-hazarika/my-portfolio" class="portfolio-link"
-                            target="_blank" rel="noopener noreferrer">
-                            VIEW PROJECT →
-                        </a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item scroll-animate">
-                    <div class="portfolio-image">LoopIn Chat Website</div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-item-title">LOOPIN – CHAT WEBSITE</h3>
-                        <p class="portfolio-item-desc">
-                            A lightweight temporary chat website where users can chat instantly without login or
-                            registration. Rooms are temporary and messages auto-delete.
-                        </p>
-                        <a href="https://loopin0.netlify.app/" class="portfolio-link" target="_blank"
-                            rel="noopener noreferrer">
-                            VIEW PROJECT →
-                        </a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item scroll-animate">
-                    <div class="portfolio-image">Cloth Store</div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-item-title">CLOTH STORE – E-COMMERCE</h3>
-                        <p class="portfolio-item-desc">
-                            Built an e-commerce website for small businesses (no login). Implemented product browsing
-                            and a WhatsApp ordering gateway using HTML, CSS, and JavaScript so customers can order
-                            directly via WhatsApp.
-                        </p>
-                        <a href="https://github.com/Pranit-kumar-hazarika/cloth-store" class="portfolio-link"
-                            target="_blank" rel="noopener noreferrer">
-                            VIEW PROJECT →
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-        <!-- Connect With Me Section -->
-        <section class="connect-section scroll-animate">
-            <div class="connect-card">
-                <h2 class="section-title">CONNECT WITH ME</h2>
-                <div class="connect-links">
-                    <a href="https://www.linkedin.com/in/pranit-kumar-hazarika-64302937a/" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/Pranit-kumar-hazarika" target="_blank">GitHub</a>
-                    <a href="https://www.instagram.com/pranittttt._/" target="_blank">Instagram</a>
-                </div>
-            </div>
-        </section>
-    </div>
-    <!-- Footer Section -->
-    <footer class="footer scroll-animate">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <h3>Pranit Kumar Hazarika</h3>
-                <p>Full-Stack Developer & Software Enthusiast</p>
-            </div>
-
-            <div class="footer-links">
-                <a href="https://github.com/Pranit-kumar-hazarika" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/pranit-kumar-hazarika-64302937a/" target="_blank">LinkedIn</a>
-                <a href="mailto:pranitkumarhazarika@gmail.com">Email</a>
             </div>
         </div>
+    </section>
 
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-container">
+            <div class="projects-header">
+                <h2 class="section-title">My Projects</h2>
+                <p class="projects-subtitle">Explore the work I've created</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- ID Card Software -->
+                <div class="project-card">
+                    <div class="project-background" style="background-color: var(--red-700);"></div>
+                    <div class="project-overlay"></div>
+                    <div class="project-content">
+                        <div>
+                            <h3 class="project-title">ID Card Software</h3>
+                            <p class="project-description">
+                                A comprehensive ID card generation system built with JavaScript, featuring a
+                                user-friendly interface and efficient card creation.
+                            </p>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Frontend</span>
+                            <a href="https://github.com/Pranit-kumar-hazarika/id-card-software" target="_blank"
+                                rel="noopener noreferrer" class="project-btn">
+                                View Project →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Website -->
+                <div class="project-card">
+                    <div class="project-background" style="background-color: var(--blue-700);"></div>
+                    <div class="project-overlay"></div>
+                    <div class="project-content">
+                        <div>
+                            <h3 class="project-title">Portfolio Website</h3>
+                            <p class="project-description">
+                                A personal portfolio website showcasing skills, projects, and achievements with a clean
+                                and modern design.
+                            </p>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-tag">html/css</span>
+                            <span class="project-tag">JavaScript</span>
+                            <a href="https://github.com/Pranit-kumar-hazarika/my-portfolio" target="_blank"
+                                rel="noopener noreferrer" class="project-btn">
+                                View Project →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LoopIn Chat Website -->
+                <div class="project-card">
+                    <div class="project-background" style="background-color: var(--purple-700);"></div>
+                    <div class="project-overlay"></div>
+                    <div class="project-content">
+                        <div>
+                            <h3 class="project-title">LoopIn – Chat Website</h3>
+                            <p class="project-description">
+                                A lightweight temporary chat website where users can chat instantly without login or
+                                registration. Rooms are temporary and messages auto-delete.
+                            </p>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">Socket.io</span>
+                            <a href="https://loopin0.netlify.app/" target="_blank" rel="noopener noreferrer"
+                                class="project-btn">
+                                View Project →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloth Store -->
+                <div class="project-card">
+                    <div class="project-background" style="background-color: var(--green-700);"></div>
+                    <div class="project-overlay"></div>
+                    <div class="project-content">
+                        <div>
+                            <h3 class="project-title">Cloth Store – E-commerce</h3>
+                            <p class="project-description">
+                                Built an e-commerce website for small businesses. Implemented product browsing and a
+                                WhatsApp ordering gateway for seamless customer experience.
+                            </p>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-tag">HTML/CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <a href="https://github.com/Pranit-kumar-hazarika/cloth-store" target="_blank"
+                                rel="noopener noreferrer" class="project-btn">
+                                View Project →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-container">
+            <div class="skills-header">
+                <h2 class="section-title">Technologies & Skills</h2>
+                <p class="projects-subtitle">Tools and technologies I work with</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">JavaScript</span>
+                        <span class="skill-percentage">95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">React</span>
+                        <span class="skill-percentage">92%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 92%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Node.js</span>
+                        <span class="skill-percentage">88%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 88%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">HTML/CSS</span>
+                        <span class="skill-percentage">96%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 96%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Git</span>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">MongoDB</span>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Express.js</span>
+                        <span class="skill-percentage">87%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 87%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Problem Solving</span>
+                        <span class="skill-percentage">93%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 93%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-box-value">10+</div>
+                    <div class="stat-box-label">Projects Completed</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-box-value">8+</div>
+                    <div class="stat-box-label">Technologies</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-box-value">1+</div>
+                    <div class="stat-box-label">Years Learning</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-box-value">500+</div>
+                    <div class="stat-box-label">Code Commits</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-container">
+            <div class="contact-grid">
+                <div class="contact-content">
+                    <div>
+                        <p class="contact-label">GET IN TOUCH</p>
+                        <h2 class="contact-title">Ready to create something amazing?</h2>
+                    </div>
+                    <p class="contact-description">
+                        I'm always interested in hearing about new projects and opportunities. Whether you have a
+                        project in mind or just want to say hello, feel free to reach out!
+                    </p>
+                    <a href="mailto:pranit@example.com" class="contact-link">
+                        Send me an Email
+                        <span class="arrow-icon">→</span>
+                    </a>
+                </div>
+
+                <div class="contact-cards">
+                    <a href="mailto:pranit@example.com" class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <h4 class="contact-card-title">Email</h4>
+                        <p class="contact-card-text">pranit@example.com</p>
+                    </a>
+
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <div class="contact-icon">🔗</div>
+                        <h4 class="contact-card-title">LinkedIn</h4>
+                        <p class="contact-card-text">Connect with me</p>
+                    </a>
+
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <div class="contact-icon">💻</div>
+                        <h4 class="contact-card-title">GitHub</h4>
+                        <p class="contact-card-text">Check my projects</p>
+                    </a>
+
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <div class="contact-icon">📷</div>
+                        <h4 class="contact-card-title">Instagram</h4>
+                        <p class="contact-card-text">Follow my journey</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-brand">PRANIT</div>
+                <p class="footer-text">A full-stack developer crafting beautiful digital experiences.</p>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Navigation</h4>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Learn More</h4>
+                <div class="footer-links">
+                    <a href="#">My Work</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Connect</h4>
+                <div class="footer-socials">
+                    <button class="footer-social-btn" onclick="window.open('https://github.com')">💻</button>
+                    <button class="footer-social-btn" onclick="window.open('https://linkedin.com')">🔗</button>
+                    <button class="footer-social-btn" onclick="window.open('https://instagram.com')">📷</button>
+                    <button class="footer-social-btn" onclick="window.open('mailto:pranit@example.com')">✉️</button>
+                </div>
+            </div>
+        </div>
         <div class="footer-bottom">
-            <p>© 2025 Pranit Kumar Hazarika. All Rights Reserved.</p>
+            <p>&copy; 2026 Pranit Kumar Hazarika. All rights reserved.</p>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
-
-<script src="script.js"></script>
 
 </html>
