@@ -50,6 +50,18 @@ const siteHeader = document.querySelector('.site-header');
 const heroSection = document.getElementById('home');
 const aboutSection = document.getElementById('about');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+document.querySelectorAll('.brand[href="#home"], .nav-links a[href="#home"]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.history.replaceState(null, '', '#home');
+        window.scrollTo({
+            top: 0,
+            behavior: prefersReducedMotion.matches ? 'auto' : 'smooth'
+        });
+    });
+});
+
 const themeToggle = document.getElementById('themeToggle');
 const savedTheme = window.localStorage.getItem('portfolio-theme');
 
@@ -204,6 +216,24 @@ document.addEventListener('keydown', (event) => {
 
 const galleryButtons = document.querySelectorAll('.filter-btn');
 const galleryItems = document.querySelectorAll('.gallery-item');
+const galleryVideos = [...document.querySelectorAll('.gallery-grid video')];
+
+galleryVideos.forEach((video, index) => {
+    video.addEventListener('play', () => {
+        galleryVideos.forEach((otherVideo) => {
+            if (otherVideo !== video) {
+                otherVideo.pause();
+            }
+        });
+    });
+
+    video.addEventListener('ended', () => {
+        const nextVideo = galleryVideos[(index + 1) % galleryVideos.length];
+        nextVideo.play().catch((error) => {
+            console.warn('Could not autoplay the next creative video.', error);
+        });
+    });
+});
 
 galleryButtons.forEach((button) => {
     button.addEventListener('click', () => {
