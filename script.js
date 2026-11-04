@@ -65,7 +65,9 @@ document.querySelectorAll('.brand[href="#home"], .nav-links a[href="#home"]').fo
 const themeToggle = document.getElementById('themeToggle');
 const savedTheme = window.localStorage.getItem('portfolio-theme');
 
-if (savedTheme === 'dark') {
+if (savedTheme === 'light') {
+    delete document.documentElement.dataset.theme;
+} else {
     document.documentElement.dataset.theme = 'dark';
 }
 
