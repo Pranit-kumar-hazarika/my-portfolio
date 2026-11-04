@@ -54,7 +54,7 @@ textarea {
 }
 
 .page-shell {
-    width: min(var(--container), calc(100% - 32px));
+    width: 100%;
     margin: 20px auto 48px;
 }
 
@@ -206,6 +206,10 @@ textarea {
     box-shadow: 0 30px 70px rgba(16, 29, 70, 0.08);
 }
 
+main section[id] {
+    scroll-margin-top: 100px;
+}
+
 .section-surface::before,
 .section-surface::after {
     content: "";
@@ -326,10 +330,6 @@ textarea {
 
 [data-theme="dark"] .site-footer {
     color: var(--text);
-}
-
-[data-theme="dark"] .signature {
-    color: #b7c4ff;
 }
 
 [data-theme="dark"] .site-header.is-scrolled .top-nav {
@@ -720,8 +720,9 @@ main > section:not(#home) {
     margin-top: 28px;
     font-family: "Caveat", cursive;
     font-size: clamp(2rem, 3vw, 3rem);
-    color: var(--navy-900);
+    color: var(--yellow-accent);
     letter-spacing: 0.04em;
+    text-shadow: 0 2px 6px rgba(16, 29, 70, 0.3);
 }
 
 .services-grid {
@@ -1791,10 +1792,6 @@ main > section:not(#home) {
 }
 
 @media (max-width: 720px) {
-    .page-shell {
-        width: min(var(--container), calc(100% - 18px));
-    }
-
     :root {
         --nav-overlay-height: clamp(78px, 23vw, 90px);
     }
@@ -1872,10 +1869,6 @@ main > section:not(#home) {
         margin-left: auto;
         padding: 8px 11px;
         font-size: 0.62rem;
-    }
-
-    main section[id] {
-        scroll-margin-top: 100px;
     }
 
     .hero {
