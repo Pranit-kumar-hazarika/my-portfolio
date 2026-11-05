@@ -438,9 +438,6 @@
                     </div>
 
                     <form class="contact-form reveal" id="contactForm">
-                        <p hidden>
-                            <label>Leave this field empty: <input name="bot-field"></label>
-                        </p>
                         <label>
                             Name
                             <input type="text" name="name" placeholder="Your name" required>
@@ -453,7 +450,9 @@
                             Project idea
                             <textarea name="message" rows="5" placeholder="Tell me about your idea..." required></textarea>
                         </label>
-                        <p class="contact-form-status" id="contactFormStatus" role="status" aria-live="polite" hidden></p>
+                        <p class="contact-form-status" id="contactFormStatus" role="status" aria-live="polite" hidden>
+                            Your email app should open with the inquiry filled in. Review it and press Send.
+                        </p>
                         <button type="submit">Send Inquiry</button>
                     </form>
                 </div>

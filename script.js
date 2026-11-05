@@ -250,36 +250,18 @@ galleryButtons.forEach((button) => {
     });
 });
 
+const contactForm = document.getElementById('contactForm');
 const contactFormStatus = document.getElementById('contactFormStatus');
 
-contactForm.addEventListener('submit', async (event) => {
+contactForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const submitButton = contactForm.querySelector('button[type="submit"]');
-    submitButton.disabled = true;
-    submitButton.textContent = 'Sending...';
-    contactFormStatus.hidden = true;
+    const formData = new FormData(contactForm);
+    const subject = encodeURIComponent('Portfolio collaboration inquiry');
+    const body = encodeURIComponent(
+        `Hello Pranit,\n\nMy name is ${formData.get('name')}.\nEmail: ${formData.get('email')}\n\n${formData.get('message')}\n\nThank you.`
+    );
 
-    try {
-        const response = await fetch('/.netlify/functions/send-inquiry', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(Object.fromEntries(new FormData(contactForm)))
-        });
-        const result = await response.json();
-
-        if (!response.ok) {
-            throw new Error(result.error || 'The inquiry could not be sent.');
-        }
-
-        contactForm.reset();
-        contactFormStatus.textContent = 'Thanks for reaching out. Your inquiry has been sent.';
-    } catch (error) {
-        console.error('Could not send the contact form inquiry.', error);
-        contactFormStatus.textContent = 'Could not send your inquiry. Please email pranitkumarhazarika09@gmail.com directly.';
-    } finally {
-        contactFormStatus.hidden = false;
-        submitButton.disabled = false;
-        submitButton.textContent = 'Send Inquiry';
-    }
+    contactFormStatus.hidden = false;
+    window.location.href = `mailto:pranitkumarhazarika09@gmail.com?subject=${subject}&body=${body}`;
 });
