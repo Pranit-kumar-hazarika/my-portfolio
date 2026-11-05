@@ -1386,6 +1386,12 @@ main > section:not(#home) {
     margin-top: 8px;
 }
 
+.contact-form-status {
+    margin: 0;
+    color: var(--yellow-accent);
+    font-weight: 600;
+}
+
 .site-footer {
     padding: 30px 18px 10px;
     color: var(--text);

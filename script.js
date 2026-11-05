@@ -250,21 +250,8 @@ galleryButtons.forEach((button) => {
     });
 });
 
-const contactForm = document.getElementById('contactForm');
+const contactFormStatus = document.getElementById('contactFormStatus');
 
-contactForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    const formData = new FormData(contactForm);
-    const name = formData.get('name') || 'there';
-    const email = formData.get('email') || 'hello@example.com';
-    const message = formData.get('message') || '';
-
-    const subject = encodeURIComponent('Portfolio collaboration inquiry');
-    const body = encodeURIComponent(
-        `Hello Pranit,\n\nMy name is ${name}.\nEmail: ${email}\n\n${message}\n\nThank you.`
-    );
-
-    window.location.href = `mailto:pranitkumarhazarika@gmail.com?subject=${subject}&body=${body}`;
-    contactForm.reset();
-});
+if (new URLSearchParams(window.location.search).get('inquiry') === 'sent') {
+    contactFormStatus.hidden = false;
+}

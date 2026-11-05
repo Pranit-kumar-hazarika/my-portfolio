@@ -437,7 +437,11 @@
                         </div>
                     </div>
 
-                    <form class="contact-form reveal" id="contactForm">
+                    <form class="contact-form reveal" id="contactForm" name="contact" method="POST" action="/?inquiry=sent#contact" data-netlify="true" netlify-honeypot="bot-field">
+                        <input type="hidden" name="form-name" value="contact">
+                        <p hidden>
+                            <label>Leave this field empty: <input name="bot-field"></label>
+                        </p>
                         <label>
                             Name
                             <input type="text" name="name" placeholder="Your name" required>
@@ -450,6 +454,9 @@
                             Project idea
                             <textarea name="message" rows="5" placeholder="Tell me about your idea..." required></textarea>
                         </label>
+                        <p class="contact-form-status" id="contactFormStatus" role="status" aria-live="polite" hidden>
+                            Thanks for reaching out. Your inquiry has been sent.
+                        </p>
                         <button type="submit">Send Inquiry</button>
                     </form>
                 </div>
