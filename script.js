@@ -252,6 +252,34 @@ galleryButtons.forEach((button) => {
 
 const contactFormStatus = document.getElementById('contactFormStatus');
 
-if (new URLSearchParams(window.location.search).get('inquiry') === 'sent') {
-    contactFormStatus.hidden = false;
-}
+contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
+    contactFormStatus.hidden = true;
+
+    try {
+        const response = await fetch('/.netlify/functions/send-inquiry', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(Object.fromEntries(new FormData(contactForm)))
+        });
+        const result = await response.json();
+
+        if (!response.ok) {
+            throw new Error(result.error || 'The inquiry could not be sent.');
+        }
+
+        contactForm.reset();
+        contactFormStatus.textContent = 'Thanks for reaching out. Your inquiry has been sent.';
+    } catch (error) {
+        console.error('Could not send the contact form inquiry.', error);
+        contactFormStatus.textContent = 'Could not send your inquiry. Please email pranitkumarhazarika09@gmail.com directly.';
+    } finally {
+        contactFormStatus.hidden = false;
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send Inquiry';
+    }
+});
